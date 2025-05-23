@@ -4,14 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Belajar Tailwind-4</title>
-  <style>
-    /* *{
-      border: solid 1px red;
-    } */
-  </style>
   <link href="./src/output.css" rel="stylesheet">
 </head>
-<body>
+<body class="dark:bg-slate-700 dark:text-slate-200">
 
   <h1 class="m-auto text-6xl font-bold text-center my-8">Mencoba Tailwind-4</h1>
   <section class="mb-10 bg-gradient-to-r from-blue-400 to-green-200">
@@ -39,15 +34,57 @@
   
   <div class="mt-32 max-w-xl mx-auto h-96 bg-slate-500 bg-contain bg-no-repeat bg-center rounded-2xl shadow-xl shadow-slate-500 overflow border-8 flex" style="background-image: url(/img/pantai.avif);">
 
-  <div class="w-[200px] h-[200px] bg-white/30 m-auto backdrop-blur-md rounded-2xl">
+  <div class="w-[200px] h-[200px] bg-white/5 m-auto backdrop-blur-md rounded-full">
 
   </div>
-
   </div>
 
- 
 
+
+
+
+  <hr class="my-20">
+
+
+  
+ <div class="flex justify-center">
+  <span class="text-sm text-slate-600 mr-2">Light</span>
+  <input type="checkbox" id="toggle" class="hidden">
+  <label for="toggle">
+    <div class="w-9 h-5 bg-slate-500 rounded-full flex items-center p-1 cursor-pointer ">
+      <div class="w-4 h-4 bg-slate-100 rounded-full toggle-circle"></div>
+    </div>
+  </label>
+  <span class="text-sm text-slate-600 ml-2">Dark</span>
+ </div>
+
+
+  <button class="my-10 bg-sky-500 px-5 py-5 rounded-full font-semibold text-white font-roboto mx-auto block hover:bg-sky-600 active:bg-sky-900 focus:ring-2 focus:ring-sky-300 dark:bg-slate-900 ">Simpan</button>
+
+  <div class="max-w-xl my-10 border border-slate-200 rounded-xl mx-auto p-5 shadow-xl font-roboto hover:bg-sky-500 group">
+    <h5 class="font-bold text-slate-700 text-lg mb-6 group-hover:text-white">MyCard</h5>
+    <p class="text-slate-500 group-hover:text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias facilis enim perspiciatis ipsa ipsam molestiae, fugiat quibusdam animi numquam architecto ad odio doloribus sit voluptate. Enim, expedita facere! Saepe, autem!</p>
+  </div>
+
+  <div class="max-w-lg border border-slate-200 rounded-xl mx-auto shadow-xl font-roboto p-5">
+    <form action="">
+      <label for="email">
+        <span class="block mb-3 font-semibold text-slate-500 after:content-['*'] after:text-pink-500 after:ml-0.5">Email :</span>
+          <input type="email" name="" id="" placeholder="Masukan Alamat Email" class="px-3 py-5 border border-slate-300 rounded-xl w-full block text-sm focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-ring-sky-500 invalid:text-pink-700 invalid:focus:ring-pink-700 invalid:focus:border-pink-700 peer">
+          <span class="text-sm m-1 text-pink-700 invisible peer-invalid:visible ">Email tidak valid</span>
+      </label>
+    </form>
+
+  </div>
   <div class="mb-96"></div>
 
+
+  <script>
+    const checkbox = document.querySelector ('#toggle');
+    const html = document.querySelector('html');
+    checkbox.addEventListener('click', function(){
+      checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark');
+    });
+  </script>
 </body>
 </html>
